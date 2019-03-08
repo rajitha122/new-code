@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+function fun1()
+{
+	
+	var a;
+	if(windows.XMLHttpRequest)
+		{
+		a=new XMLHttpRequest();
+		
+		
+		}
+	else
+	{
+	a=new ActiveXObject("Microsoft.XMLHTTP";)
+	}
+	a.open("Get","ajax.txt",true);
+	a.send();
+	a.onresdyStatechange=function()
+	{
+		if(a.readyState==4 && a.status==200)
+	{
+		
+		document.getElementById("myDiv").innerHTML=a.responseText;
+		document.getElementById("textArea").value=a.responseText;
+		
+	}
+	}
+	
+}
+
+
+</script>
+</head>
+<body>
+<h1>my first page using ajax  </h1>
+<div id="mydiv" style="width:300px;height:30px;">click on button below</div>
+
+<textarea id="textArea" cols="40" rows="5"></textarea>
+<br>
+<br>
+<button type="button" onclick="fun1()">change content</button>
+
+</body>
+</html>
