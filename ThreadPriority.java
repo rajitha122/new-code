@@ -1,5 +1,3 @@
-package ThreadDemo;
-
 class X extends Thread 
 { 
    public void run() 

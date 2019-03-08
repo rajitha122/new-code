@@ -1,0 +1,11 @@
+
+public class UpdateExample {
+
+	public static void main(String[] args) throws Exception {
+		Updatesql up=new Updatesql();
+		up.createConnection();
+		up.update();
+
+	}
+
+}
